@@ -1,0 +1,66 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package student.grade;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author test02
+ */
+public class StudentGrade {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter marks for 5 subjects:");
+        int[] marks = new int[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Subject " + (i+1) + ": ");
+            marks[i] = scanner.nextInt();
+        }
+        
+        int totalMarks = 0;
+        for (int mark : marks) {
+            totalMarks += mark;
+        }
+        
+        double averageMarks = (double) totalMarks / 5;
+        
+        String grade;
+        int gradePoints;
+        
+        if (averageMarks >= 91 && averageMarks <= 100) {
+            grade = "O";
+            gradePoints = 10;
+        } else if (averageMarks >= 81) {
+            grade = "A+";
+            gradePoints = 9;
+        } else if (averageMarks >= 71) {
+            grade = "A";
+            gradePoints = 8;
+        } else if (averageMarks >= 61) {
+            grade = "B+";
+            gradePoints = 7;
+        } else if (averageMarks >= 50) {
+            grade = "B";
+            gradePoints = 6;
+        } else {
+            grade = "RA";
+            gradePoints = 0;
+        }
+        
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Average Marks: " + averageMarks);
+        System.out.println("Grade: " + grade);
+        System.out.println("Grade Points: " + gradePoints);
+    }
+}
+        // TODO code application logic here
+    
+
